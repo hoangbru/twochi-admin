@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
 import SettingsForm from "./components/settings-form";
+
+export const metadata: Metadata = {
+  title: 'twoChi | Dashboard | Settings',
+  description: 'Settings',
+}
 
 const SettingsPage = async ({ params }: { params: { storeId: string } }) => {
   const { userId } = auth();
