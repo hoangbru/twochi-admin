@@ -14,6 +14,7 @@ export const getGraphRevenue = async (storeId: string): Promise<GraphData[]> => 
     include: {
       orderItems: {
         include: {
+          product: true,
         },
       },
     },
